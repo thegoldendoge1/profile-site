@@ -1,0 +1,201 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+}
+
+body{
+  background:#02030a;
+  color:#fff;
+  height:100vh;
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ===== CARD ===== */
+.card{
+  position:relative;
+  z-index:2;
+
+  width:520px;
+  max-width:92%;
+
+  padding:48px 36px;
+
+  border-radius:32px;
+
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(30px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 10px 60px rgba(0,0,0,.5),
+    0 0 120px rgba(111,124,255,.08);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+
+  gap:14px;
+
+  animation:floatCard 7s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* ===== AVATAR ===== */
+.avatar{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+
+  border:1px solid rgba(255,255,255,.25);
+
+  box-shadow:
+    0 0 25px rgba(255,255,255,.15),
+    0 0 70px rgba(143,61,255,.25);
+}
+
+/* ===== TITLE ===== */
+.title{
+  font-family:"Pacifico",cursive;
+  font-size:52px;
+  font-weight:400;
+  margin-top:6px;
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle{
+  opacity:.65;
+  margin-bottom:10px;
+}
+
+/* ===== LINKS ===== */
+.links{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+
+.links a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;
+
+  transition:.3s;
+}
+
+.links a:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.08);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  margin-top:18px;
+  font-size:11px;
+  letter-spacing:.35em;
+  opacity:.4;
+}
+
+/* ===== COSMIC BACKGROUND ===== */
+
+.stars,.stars2,.nebula{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+
+.stars{
+  background-image:
+    radial-gradient(2px 2px at 20% 30%,#fff,transparent),
+    radial-gradient(1px 1px at 70% 20%,#fff,transparent),
+    radial-gradient(2px 2px at 80% 70%,#fff,transparent),
+    radial-gradient(1px 1px at 40% 80%,#fff,transparent),
+    radial-gradient(2px 2px at 10% 60%,#fff,transparent);
+
+  background-size:300px 300px;
+  animation:drift 60s linear infinite;
+}
+
+.stars2{
+  background-image:
+    radial-gradient(1px 1px at 30% 10%,#9cf,transparent),
+    radial-gradient(1px 1px at 60% 60%,#c9f,transparent),
+    radial-gradient(1px 1px at 90% 40%,#fff,transparent);
+
+  background-size:220px 220px;
+  opacity:.7;
+
+  animation:drift 35s linear infinite reverse;
+}
+
+.nebula:before,
+.nebula:after{
+  content:'';
+  position:absolute;
+  width:40rem;
+  height:40rem;
+  border-radius:50%;
+  filter:blur(110px);
+  opacity:.18;
+}
+
+.nebula:before{
+  background:#6f7cff;
+  top:-10rem;
+  left:-8rem;
+  animation:float 14s ease-in-out infinite;
+}
+
+.nebula:after{
+  background:#8f3dff;
+  right:-10rem;
+  bottom:-10rem;
+  animation:float 18s ease-in-out infinite reverse;
+}
+
+.shooting{
+  position:fixed;
+  width:2px;
+  height:90px;
+  background:linear-gradient(transparent,#fff);
+  transform:rotate(35deg);
+  top:-100px;
+  left:75%;
+  animation:shoot 7s linear infinite;
+}
+
+@keyframes drift{
+  from{transform:translateY(0)}
+  to{transform:translateY(-300px)}
+}
+
+@keyframes float{
+  50%{transform:translate(50px,-40px) scale(1.1)}
+}
+
+@keyframes shoot{
+  0%{transform:translate(0,0) rotate(35deg);opacity:0}
+  10%{opacity:1}
+  100%{transform:translate(-700px,700px) rotate(35deg);opacity:0}
+}
