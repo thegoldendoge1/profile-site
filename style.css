@@ -199,3 +199,96 @@ body{
   10%{opacity:1}
   100%{transform:translate(-700px,700px) rotate(35deg);opacity:0}
 }
+
+/* --- Стили виджета Last.fm --- */
+
+/* Основной контейнер плашки */
+.lastfm-widget {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px; /* Чуть больше скругление */
+    padding: 12px 16px; /* Увеличили отступы внутри */
+    margin: 25px auto 10px auto; /* Сделали отступ сверху побольше */
+    width: 100%; 
+    max-width: 360px; /* Расширили плашку, чтобы она была почти по ширине кнопок */
+    box-sizing: border-box; /* Чтобы padding не ломал ширину */
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Эффект при наведении курсора */
+.lastfm-widget:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+/* Стили обложки альбома */
+#lastfm-cover {
+    width: 52px; /* Увеличили обложку (была 36) */
+    height: 52px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 16px; /* Отодвинули текст чуть дальше от картинки */
+    display: block;
+}
+
+/* Контейнер для текстовой информации */
+.lastfm-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    justify-content: center;
+}
+
+
+
+/* Статус (оставляем в одну строку) */
+.lastfm-status {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1db954;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Модификатор для статуса "Оффлайн" (последний трек) */
+.lastfm-status.offline {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Название трека (разрешаем 2 строки) */
+.lastfm-track {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 2px;
+    white-space: normal; /* Разрешаем перенос текста */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Ограничиваем максимум 2 строками */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.2; /* Аккуратный межстрочный интервал */
+}
+
+/* Исполнитель (разрешаем 2 строки) */
+.lastfm-artist {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.2;
+}
