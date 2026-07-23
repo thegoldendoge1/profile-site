@@ -19,10 +19,8 @@ const LASTFM_USER = 'TheGoldenDoge';
 const LASTFM_API_KEY = '3564f0f79bee7b49abd8c20daaade073'; 
 
 // Формируем оригинальную ссылку Last.fm
-const lastfmUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
+const url = `/api/lastfm/?method=user.getrecenttracks&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
 
-// Оборачиваем ссылку в публичный прокси (allorigins)
-const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(lastfmUrl)}`;
 async function updateLastFM() {
     try {
         const response = await fetch(url);
