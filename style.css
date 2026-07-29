@@ -126,27 +126,54 @@ body{
 }
 
 .stars{
-  background-image:
-    radial-gradient(2px 2px at 20% 30%,#fff,transparent),
-    radial-gradient(1px 1px at 70% 20%,#fff,transparent),
-    radial-gradient(2px 2px at 80% 70%,#fff,transparent),
-    radial-gradient(1px 1px at 40% 80%,#fff,transparent),
-    radial-gradient(2px 2px at 10% 60%,#fff,transparent);
+  background:
+    radial-gradient(2px 2px at 87px 203px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 432px 127px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 678px 456px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 234px 512px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 89px 378px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 567px 89px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 312px 645px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 723px 234px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 145px 789px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 456px 312px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 189px 156px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 534px 423px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 267px 534px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 612px 167px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 78px 445px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 389px 78px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 723px 534px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 156px 623px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 489px 289px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 67px 567px, rgba(255,255,255,0.7), transparent);
 
-  background-size:300px 300px;
-  animation:drift 60s linear infinite, twinkle 4s ease-in-out infinite;
+  background-size:800px 800px;
+  animation:drift 120s linear infinite, twinkle 4s ease-in-out infinite;
 }
 
 .stars2{
-  background-image:
-    radial-gradient(1px 1px at 30% 10%,#9cf,transparent),
-    radial-gradient(1px 1px at 60% 60%,#c9f,transparent),
-    radial-gradient(1px 1px at 90% 40%,#fff,transparent);
+  background:
+    radial-gradient(1px 1px at 178px 67px, rgba(153,204,255,0.8), transparent),
+    radial-gradient(1px 1px at 423px 378px, rgba(204,153,255,0.7), transparent),
+    radial-gradient(1px 1px at 634px 267px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 289px 534px, rgba(153,204,255,0.9), transparent),
+    radial-gradient(1px 1px at 567px 123px, rgba(204,153,255,0.8), transparent),
+    radial-gradient(1px 1px at 89px 445px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 334px 667px, rgba(153,204,255,0.6), transparent),
+    radial-gradient(1px 1px at 712px 456px, rgba(204,153,255,0.9), transparent),
+    radial-gradient(1px 1px at 234px 89px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 489px 312px, rgba(153,204,255,0.7), transparent),
+    radial-gradient(1px 1px at 123px 623px, rgba(204,153,255,0.6), transparent),
+    radial-gradient(1px 1px at 456px 178px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 678px 534px, rgba(153,204,255,0.8), transparent),
+    radial-gradient(1px 1px at 312px 234px, rgba(204,153,255,0.7), transparent),
+    radial-gradient(1px 1px at 545px 667px, rgba(255,255,255,0.6), transparent);
 
-  background-size:220px 220px;
-  opacity:.7;
+  background-size:700px 700px;
+  opacity:.6;
 
-  animation:drift 35s linear infinite reverse, twinkle 3s ease-in-out infinite reverse;
+  animation:drift 80s linear infinite reverse, twinkle 3s ease-in-out infinite reverse;
 }
 
 @keyframes twinkle {
@@ -207,8 +234,8 @@ body{
 .shooting:nth-child(5){left:65%;animation-delay:3s;animation-duration:9s}
 
 @keyframes drift{
-  from{transform:translateY(0)}
-  to{transform:translateY(-300px)}
+  from{transform:translateY(0) translateX(0)}
+  to{transform:translateY(-400px) translateX(200px)}
 }
 
 @keyframes float{
