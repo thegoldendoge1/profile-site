@@ -118,7 +118,7 @@ async function updateMinecraftStatus() {
 
             // Версия сервера
             if (data.version) {
-                versionEl.textContent = data.version;
+                versionEl.textContent = `Minecraft ${data.version}`;
             }
         } else {
             // Сервер оффлайн
