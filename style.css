@@ -580,3 +580,124 @@ body{
 .mc-copy-btn.copied .check-icon {
     display: block;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 36px 20px 28px 20px;
+    border-radius: 24px;
+    gap: 12px;
+    animation: none;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .links {
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .links a {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .footer {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+
+  /* Widgets mobile */
+  .lastfm-widget,
+  .minecraft-widget {
+    max-width: 100%;
+    padding: 10px 12px;
+    margin: 16px auto 0 auto;
+  }
+
+  #lastfm-cover {
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+  }
+
+  .lastfm-track {
+    font-size: 13px;
+  }
+
+  .lastfm-artist {
+    font-size: 12px;
+  }
+
+  .mc-icon {
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+  }
+
+  .mc-status {
+    font-size: 10px;
+  }
+
+  .mc-ip-text {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .mc-copy-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mc-meta {
+    font-size: 11px;
+  }
+
+  /* Background effects - reduce on mobile */
+  .particles,
+  .aurora {
+    display: none;
+  }
+
+  .nebula:before,
+  .nebula:after {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .links a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .mc-ip-text {
+    font-size: 12px;
+  }
+}
