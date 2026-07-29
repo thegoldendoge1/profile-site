@@ -79,3 +79,103 @@ function getTimeAgo(uts) {
 // Запускаем
 updateLastFM();
 setInterval(updateLastFM, 30000);
+
+// ===== MINECRAFT SERVER STATUS =====
+
+const MC_SERVER = 'lenscape.space';
+const MC_API_URL = `https://api.mcsrvstat.us/2/${MC_SERVER}`;
+
+async function updateMinecraftStatus() {
+    const statusDot = document.getElementById('mc-status-dot');
+    const statusText = document.getElementById('mc-status-text');
+    const statusContainer = document.getElementById('mc-status');
+    const playersEl = document.getElementById('mc-players');
+    const versionEl = document.getElementById('mc-version');
+    const widget = document.getElementById('minecraft-widget');
+
+    try {
+        const response = await fetch(MC_API_URL);
+        if (!response.ok) throw new Error('Network error');
+        const data = await response.json();
+
+        if (data.online) {
+            // Сервер онлайн
+            statusDot.className = 'status-dot';
+            statusText.className = 'mc-status-text';
+            statusText.textContent = 'ONLINE';
+            statusContainer.className = 'mc-status';
+            widget.classList.remove('offline');
+
+            const players = data.players;
+            const online = players.online || 0;
+            const max = players.max || 0;
+
+            if (online > 0) {
+                playersEl.textContent = `${online} / ${max} players online`;
+            } else {
+                playersEl.textContent = `${online} / ${max} players`;
+            }
+
+            // Версия сервера
+            if (data.version) {
+                versionEl.textContent = `Minecraft ${data.version}`;
+            }
+        } else {
+            // Сервер оффлайн
+            setOfflineStatus();
+        }
+    } catch (error) {
+        console.error('Minecraft status fetch error:', error);
+        setOfflineStatus();
+    }
+}
+
+function setOfflineStatus() {
+    const statusDot = document.getElementById('mc-status-dot');
+    const statusText = document.getElementById('mc-status-text');
+    const statusContainer = document.getElementById('mc-status');
+    const playersEl = document.getElementById('mc-players');
+    const versionEl = document.getElementById('mc-version');
+    const widget = document.getElementById('minecraft-widget');
+
+    statusDot.className = 'status-dot offline';
+    statusText.className = 'mc-status-text';
+    statusText.textContent = 'OFFLINE';
+    statusContainer.className = 'mc-status offline';
+    playersEl.textContent = 'Server is down';
+    versionEl.textContent = '';
+    widget.classList.add('offline');
+}
+
+// Запускаем
+updateMinecraftStatus();
+setInterval(updateMinecraftStatus, 60000); // Проверяем каждую минуту
+
+// ===== COPY IP BUTTON =====
+const copyBtn = document.getElementById('mc-copy-btn');
+
+copyBtn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(MC_SERVER);
+        copyBtn.classList.add('copied');
+
+        setTimeout(() => {
+            copyBtn.classList.remove('copied');
+        }, 2000);
+    } catch (err) {
+        // Fallback для старых браузеров
+        const textArea = document.createElement('textarea');
+        textArea.value = MC_SERVER;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+            copyBtn.classList.remove('copied');
+        }, 2000);
+    }
+});

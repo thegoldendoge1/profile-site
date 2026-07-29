@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>meow ^_^</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&family=Pacifico&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -39,6 +39,29 @@
           <div id="lastfm-track" class="lastfm-track">Track name</div>
           <div id="lastfm-artist" class="lastfm-artist">Artist</div>
       </div>
+  </div>
+
+<!-- Плашка Minecraft сервера -->
+  <div id="minecraft-widget" class="minecraft-widget">
+      <img class="mc-icon" src="minecraft-icon.png" alt="Minecraft">
+      <div class="mc-info">
+          <div id="mc-status" class="mc-status">
+              <span id="mc-status-dot" class="status-dot"></span>
+              <span id="mc-status-text" class="mc-status-text">Checking...</span>
+          </div>
+          <div id="mc-title" class="mc-title">lenscape.space</div>
+          <div id="mc-players" class="mc-players">—</div>
+          <div id="mc-version" class="mc-version"></div>
+      </div>
+      <button id="mc-copy-btn" class="mc-copy-btn" title="Copy IP">
+          <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+      </button>
   </div>
 
   <div class="footer">meow ^_^</div>
