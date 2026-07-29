@@ -134,7 +134,7 @@ body{
     radial-gradient(2px 2px at 10% 60%,#fff,transparent);
 
   background-size:300px 300px;
-  animation:drift 60s linear infinite;
+  animation:drift 60s linear infinite, twinkle 4s ease-in-out infinite;
 }
 
 .stars2{
@@ -146,32 +146,47 @@ body{
   background-size:220px 220px;
   opacity:.7;
 
-  animation:drift 35s linear infinite reverse;
+  animation:drift 35s linear infinite reverse, twinkle 3s ease-in-out infinite reverse;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
 .nebula:before,
 .nebula:after{
   content:'';
   position:absolute;
-  width:40rem;
-  height:40rem;
+  width:50rem;
+  height:50rem;
   border-radius:50%;
-  filter:blur(110px);
-  opacity:.18;
+  filter:blur(120px);
+  opacity:.25;
 }
 
 .nebula:before{
   background:#6f7cff;
-  top:-10rem;
-  left:-8rem;
-  animation:float 14s ease-in-out infinite;
+  top:-15rem;
+  left:-10rem;
+  animation:float 12s ease-in-out infinite, nebulaColor1 10s ease-in-out infinite;
 }
 
 .nebula:after{
   background:#8f3dff;
-  right:-10rem;
-  bottom:-10rem;
-  animation:float 18s ease-in-out infinite reverse;
+  right:-12rem;
+  bottom:-12rem;
+  animation:float 16s ease-in-out infinite reverse, nebulaColor2 12s ease-in-out infinite;
+}
+
+@keyframes nebulaColor1 {
+  0%, 100% { background: #6f7cff; }
+  50% { background: #ff6fcf; }
+}
+
+@keyframes nebulaColor2 {
+  0%, 100% { background: #8f3dff; }
+  50% { background: #3dffff; }
 }
 
 .shooting{
@@ -184,6 +199,12 @@ body{
   left:75%;
   animation:shoot 7s linear infinite;
 }
+
+.shooting:nth-child(1){left:20%;animation-delay:0s;animation-duration:6s}
+.shooting:nth-child(2){left:50%;animation-delay:2s;animation-duration:8s}
+.shooting:nth-child(3){left:80%;animation-delay:4s;animation-duration:5s}
+.shooting:nth-child(4){left:35%;animation-delay:1s;animation-duration:7s}
+.shooting:nth-child(5){left:65%;animation-delay:3s;animation-duration:9s}
 
 @keyframes drift{
   from{transform:translateY(0)}
@@ -198,6 +219,72 @@ body{
   0%{transform:translate(0,0) rotate(35deg);opacity:0}
   10%{opacity:1}
   100%{transform:translate(-700px,700px) rotate(35deg);opacity:0}
+}
+
+/* Floating particles */
+.particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.particle{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:rgba(255,255,255,0.3);
+  border-radius:50%;
+  animation:floatParticle 15s linear infinite;
+}
+
+.particle:nth-child(1){left:10%;animation-delay:0s;animation-duration:20s}
+.particle:nth-child(2){left:25%;animation-delay:3s;animation-duration:18s}
+.particle:nth-child(3){left:40%;animation-delay:6s;animation-duration:22s}
+.particle:nth-child(4){left:55%;animation-delay:2s;animation-duration:19s}
+.particle:nth-child(5){left:70%;animation-delay:8s;animation-duration:21s}
+.particle:nth-child(6){left:85%;animation-delay:4s;animation-duration:17s}
+.particle:nth-child(7){left:15%;animation-delay:10s;animation-duration:23s}
+.particle:nth-child(8){left:60%;animation-delay:5s;animation-duration:16s}
+
+@keyframes floatParticle{
+  0%{transform:translateY(100vh) scale(0);opacity:0}
+  10%{opacity:0.6}
+  90%{opacity:0.6}
+  100%{transform:translateY(-100px) scale(1);opacity:0}
+}
+
+/* Aurora effect */
+.aurora{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:40vh;
+  background:linear-gradient(to top,
+    rgba(76,175,80,0.08) 0%,
+    rgba(76,175,80,0.04) 30%,
+    transparent 100%);
+  animation:auroraWave 8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.aurora::before{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:30vh;
+  background:linear-gradient(to top,
+    rgba(33,150,243,0.06) 0%,
+    transparent 100%);
+  animation:auroraWave 10s ease-in-out infinite reverse;
+}
+
+@keyframes auroraWave{
+  0%, 100%{transform:translateY(0) scaleY(1)}
+  50%{transform:translateY(-20px) scaleY(1.1)}
 }
 
 /* --- Стили виджета Last.fm --- */
