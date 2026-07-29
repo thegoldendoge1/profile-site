@@ -383,57 +383,52 @@ body{
 }
 
 .mc-title {
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 6px 6px 6px 14px;
+    gap: 8px;
     font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 }
 
-.mc-players {
+.mc-ip-text {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.mc-version {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 2px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .mc-copy-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
     flex-shrink: 0;
 }
 
 .mc-copy-btn:hover {
-    background: rgba(76, 175, 80, 0.15);
-    border-color: rgba(76, 175, 80, 0.3);
+    background: rgba(76, 175, 80, 0.2);
     color: #4CAF50;
 }
 
 .minecraft-widget.offline .mc-copy-btn:hover {
-    background: rgba(244, 67, 54, 0.15);
-    border-color: rgba(244, 67, 54, 0.3);
+    background: rgba(244, 67, 54, 0.2);
     color: #f44336;
 }
 
 .mc-copy-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
 }
 
 .mc-copy-btn .check-icon {
