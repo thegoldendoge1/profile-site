@@ -399,14 +399,16 @@ body{
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.3px;
     white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
 }
 
 .mc-copy-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     background: rgba(255, 255, 255, 0.08);
     border: none;
     border-radius: 50%;
@@ -414,6 +416,12 @@ body{
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
     flex-shrink: 0;
+    padding: 0;
+}
+
+.mc-copy-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .mc-copy-btn:hover {
@@ -424,11 +432,6 @@ body{
 .minecraft-widget.offline .mc-copy-btn:hover {
     background: rgba(244, 67, 54, 0.2);
     color: #f44336;
-}
-
-.mc-copy-btn svg {
-    width: 14px;
-    height: 14px;
 }
 
 .mc-meta {
