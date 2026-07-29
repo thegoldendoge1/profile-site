@@ -89,6 +89,8 @@ async function updateMinecraftStatus() {
     const statusDot = document.getElementById('mc-status-dot');
     const statusText = document.getElementById('mc-status-text');
     const statusContainer = document.getElementById('mc-status');
+    const playersEl = document.getElementById('mc-players');
+    const versionEl = document.getElementById('mc-version');
     const widget = document.getElementById('minecraft-widget');
 
     try {
@@ -103,6 +105,21 @@ async function updateMinecraftStatus() {
             statusText.textContent = 'ONLINE';
             statusContainer.className = 'mc-status';
             widget.classList.remove('offline');
+
+            const players = data.players;
+            const online = players.online || 0;
+            const max = players.max || 0;
+
+            if (online > 0) {
+                playersEl.textContent = `${online}/${max} online`;
+            } else {
+                playersEl.textContent = `0/${max} players`;
+            }
+
+            // Версия сервера
+            if (data.version) {
+                versionEl.textContent = data.version;
+            }
         } else {
             // Сервер оффлайн
             setOfflineStatus();
@@ -117,12 +134,16 @@ function setOfflineStatus() {
     const statusDot = document.getElementById('mc-status-dot');
     const statusText = document.getElementById('mc-status-text');
     const statusContainer = document.getElementById('mc-status');
+    const playersEl = document.getElementById('mc-players');
+    const versionEl = document.getElementById('mc-version');
     const widget = document.getElementById('minecraft-widget');
 
     statusDot.className = 'status-dot offline';
     statusText.className = 'mc-status-text';
     statusText.textContent = 'OFFLINE';
     statusContainer.className = 'mc-status offline';
+    playersEl.textContent = '—';
+    versionEl.textContent = '';
     widget.classList.add('offline');
 }
 

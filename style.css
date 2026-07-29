@@ -431,6 +431,19 @@ body{
     height: 14px;
 }
 
+.mc-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 6px;
+}
+
+.mc-meta-sep {
+    color: rgba(255, 255, 255, 0.2);
+}
+
 .mc-copy-btn .check-icon {
     display: none;
     color: #4CAF50;
