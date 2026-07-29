@@ -393,7 +393,7 @@ body{
 }
 
 .mc-ip-text {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.3px;
@@ -402,7 +402,7 @@ body{
     height: 38px;
     line-height: 38px;
     flex: 1;
-    font-family: Consolas, 'Lucida Console', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 }
 
 .mc-copy-btn {
